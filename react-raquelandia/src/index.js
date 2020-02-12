@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Bg_image_rebass from './rebass_bg_image'
+import NavBasicExample from './sidebar_ex'
+
 
 /*import DatatablePage from './app.js'
 import Table from 'react-responsive-data-table';
@@ -85,4 +87,6 @@ class Basicgrid extends React.Component {
 */
 
 ReactDOM.render(<Bg_image_rebass/>, document.getElementById('root'));
+//ReactDOM.render(<React_side_bar/>, document.getElementById('biotecnologia'));
+//ReactDOM.render(<NavBasicExample/>, document.getElementById('root2'));
 
