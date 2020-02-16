@@ -23,14 +23,7 @@ class SideBarRebass extends React.Component {
             </Button>
             <Button children='Biotecnología' width="100%" />
             <Button children='Alta Tecnología' width="100%" />
-            <Button width="100%">
-                <a href="#formulario">'¿Podrás vivir en Raquelandia?'</a>
-            </Button>
-            <Button children='Biotecnología' width="100%" />
-            <Button children='Alta Tecnología' width="100%" />
-            <Button width="100%">
-                <a href="#formulario">'¿Podrás vivir en Raquelandia?'</a>
-            </Button>
+           
             
             </Flex>
         )

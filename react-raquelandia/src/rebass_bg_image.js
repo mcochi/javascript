@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import imageraq from './island2.jpg'
-import imageraq2 from './island.jpg'
-import imagemiki from './miki.jpeg'
-import playa from './nodo.jpeg'
-import moncayo from './moncayo.jpeg'
-import ResponsiveTable from './responsive_table'
-import SideBarRebass from './rebass_sidebar'
+import imageraq from './island2.jpg';
+import imageraq2 from './island.jpg';
+import imagemiki from './miki.jpeg';
+import playa from './nodo.jpeg';
+import moncayo from './moncayo.jpeg';
+import SideBarRebass from './rebass_sidebar';
+import Rebass_forms from './rebass_form';
 import {
     Box,
     Card,
@@ -14,8 +14,11 @@ import {
     Heading,
     Text,
     Flex
-  } from 'rebass'
-import Rebass_forms from './rebass_form';
+  } from 'rebass';
+import SimpleTable from './simple_table'
+
+
+
 
 
   class Bg_image_rebass extends React.Component {
@@ -138,13 +141,14 @@ import Rebass_forms from './rebass_form';
                         width="560" height="315" src="https://www.youtube.com/embed/mtf7hC17IBM" frameborder="0" allowfullscreen
                 />
                 </Box>
-
+                <Rebass_forms />
+                <SimpleTable/>
                 </Box>
                 <Box 
                 px={2} 
                 py={0} 
                 width={1}
-                >   <Rebass_forms />
+                >   
                     <Heading
                         fontSize={[ 1, 1, 1 ]}
                         position='center'
@@ -152,8 +156,7 @@ import Rebass_forms from './rebass_form';
                         backgroundColor="Silver">
                         Made by Cochi's
                     </Heading>
-                </Box>
-
+                </Box>    
               </Flex>
           )
       }

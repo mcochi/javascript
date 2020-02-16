@@ -46,7 +46,7 @@ class ResponsiveTable extends React.Component {
       sort={true}
       title="Estadísticas Biotecnología INE"
       search={true}
-      size={5}
+      size={20}
       data={dataapi}/>
     )
   }
