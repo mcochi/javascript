@@ -9,10 +9,97 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-  
+    <style>
+      /*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+  */
+  /* 
+  Generic Styling, for Desktops/Laptops 
+  */
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background:silver; 
+  }
+  th { 
+    background: silver; 
+    color: white; 
+    font-weight: bold;
+    text-align: center; 
+  }
+  td, th { 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    text-align: center; 
+    font-size: smaller;
+  }
+	@media
+	  only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+    tr:nth-child(odd) {
+      background: #ccc;
+    }
+    
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 0 solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 10px;
+			width: 45%;
+      padding-right: 10px;
+			white-space: nowrap;
+		}
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(1):before { content: "id"; }
+		td:nth-of-type(2):before { content: "Región"; }
+		td:nth-of-type(3):before { content: "Año"; }
+		td:nth-of-type(4):before { content: "Gasto en Bio Total"; }
+		td:nth-of-type(5):before { content: "Personal en Bio Total"; }
+		td:nth-of-type(6):before { content: "Investigadroes en Bio Total"; }
+		td:nth-of-type(7):before { content: "Gasto en Bio Empresas"; }
+		td:nth-of-type(8):before { content: "Personal en Bio Empresas"; }
+		td:nth-of-type(9):before { content: "Investigadores en Bio Empresas"; }
+	}
+    </style>
+  ></script>
   </head>
   <body>
     <div id="root"></div>
+   
   
   <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
   </body>

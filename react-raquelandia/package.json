@@ -22,6 +22,7 @@
     "react-pivot": "^4.1.2",
     "react-responsive-data-table": "^1.0.4",
     "react-scripts": "3.3.1",
+    "react-table": "^7.0.0-rc.16",
     "rebass": "^4.0.7",
     "victory": "^34.1.1"
   },

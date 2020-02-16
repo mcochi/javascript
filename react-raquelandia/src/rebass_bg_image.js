@@ -15,11 +15,10 @@ import {
     Text,
     Flex
   } from 'rebass';
-import SimpleTable from './simple_table'
-
-
-
-
+import SimpleTable from './simple_table';
+import SimpleDynamicTable from './simple_dynamic_table'
+import ResponsiveTable from './responsive_table'
+import DatatablePage from './app'
 
   class Bg_image_rebass extends React.Component {
       constructor(props) {
@@ -140,10 +139,15 @@ import SimpleTable from './simple_table'
                     <iframe
                         width="560" height="315" src="https://www.youtube.com/embed/mtf7hC17IBM" frameborder="0" allowfullscreen
                 />
-                </Box>
+                </Box >
+                <Box width={1} sx={{backgroundColor:"white"}}>
                 <Rebass_forms />
-                <SimpleTable/>
                 </Box>
+                </Box>
+                <Box width={1} padding="10px">
+                    <DatatablePage />
+                </Box>
+
                 <Box 
                 px={2} 
                 py={0} 

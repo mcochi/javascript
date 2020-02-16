@@ -110,7 +110,7 @@ import {
             </Flex>
             <Flex mx={-2} flexWrap='wrap'>
               <Box px={2} ml='auto'>
-                <Button type="submit">
+                <Button type="submit" backgroundColor="silver">
                   Comprobar
                 </Button>
               </Box>

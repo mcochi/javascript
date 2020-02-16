@@ -5,49 +5,16 @@ import { MDBDataTable } from 'mdbreact';
 class DatatablePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      columns: [
-        {
-          label: 'Region',
-          field: 'Region',
-          sort: 'asc',
-          width: 150
-        },
-        {
-          label: 'Year',
-          field: 'Year',
-          sort: 'asc',
-          width: 270
-        },
-        {
-          label: 'Id',
-          field: 'id',
-          sort: 'asc',
-          width: 200
-        },
-        {
-          label: 'GastoBioTotal',
-          field: 'GastoBioTotal',
-          sort: 'asc',
-          width: 100
-        },
-        {
-          label: 'PersBioTotal',
-          field: 'PersBioTotal',
-          sort: 'asc',
-          width: 150
-        },
-        {
-          label: 'InvBioEmp',
-          field: 'InvBioEmp',
-          sort: 'asc',
-          width: 100
-        }
-      ],
-      rows:[]
-    };
   }
 
+  get_data_from_url = (url) => {
+    var http_req = new XMLHttpRequest();
+    http_req.open("GET",url,false);
+    http_req.send(null);
+    console.log("Hemos pasado por aquí")
+    return http_req.responseText;
+}
+/*
   consulta = () => {
     fetch("https://cors-anywhere.herokuapp.com/http://79.153.17.195:3002/users")
     .then(res => res.json())
@@ -56,15 +23,60 @@ class DatatablePage extends React.Component {
       this.setState({rows: result})
     }).catch(console.log);
   }
+*/
+
   render() {
     //console.log(this.consulta());
-    this.consulta();
+    //this.consulta();
+    var data_url = "http://79.153.17.195:3002/users";
+    var data_obj = JSON.parse(this.get_data_from_url(data_url));
+    var dataapi ={
+      columns: [
+        {
+          label: 'Region',
+          field: 'Region',
+          sort: 'asc',
+        },
+        {
+          label: 'Year',
+          field: 'Year',
+          sort: 'asc',
+
+        },
+        {
+          label: 'Id',
+          field: 'id',
+          sort: 'asc',
+
+        },
+        {
+          label: 'GastoBioTotal',
+          field: 'GastoBioTotal',
+          sort: 'asc',
+
+        },
+        {
+          label: 'PersBioTotal',
+          field: 'PersBioTotal',
+          sort: 'asc',
+
+        },
+        {
+          label: 'InvBioEmp',
+          field: 'InvBioEmp',
+          sort: 'asc',
+
+        }
+      ],
+      rows:[]
+    };
+    dataapi.rows = data_obj;
     return (
       <MDBDataTable
       striped
       bordered
       small
-      data={this.state}
+      data={dataapi}
       />
     )
   }
