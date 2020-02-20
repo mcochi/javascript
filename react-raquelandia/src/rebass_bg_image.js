@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import imageraq from './island2.jpg';
-import imageraq2 from './island.jpg';
+//import ReactDOM from 'react-dom';
+//import imageraq from './island2.jpg';
+//import imageraq2 from './island.jpg';
 import imagemiki from './miki.jpeg';
 import playa from './nodo.jpeg';
 import moncayo from './moncayo.jpeg';
-import SideBarRebass from './rebass_sidebar';
+//import SideBarRebass from './rebass_sidebar';
 import Rebass_forms from './rebass_form';
 import {
     Box,
@@ -15,10 +15,10 @@ import {
     Text,
     Flex
   } from 'rebass';
-import SimpleTable from './simple_table';
-import SimpleDynamicTable from './simple_dynamic_table'
-import ResponsiveTable from './responsive_table'
-import DatatablePage from './app' //Esta es la que realmente funciona y que es responsive
+//import SimpleTable from './simple_table';
+//import SimpleDynamicTable from './simple_dynamic_table'
+//import ResponsiveTable from './responsive_table'
+//import DatatablePage from './app' //Esta es la que realmente funciona y que es responsive
 import ParallaxScene from './parallax_comp'
 
   class Bg_image_rebass extends React.Component {

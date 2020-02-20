@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Bg_image_rebass from './rebass_bg_image'
-import NavBasicExample from './sidebar_ex'
+//import NavBasicExample from './sidebar_ex'
 
 
 
