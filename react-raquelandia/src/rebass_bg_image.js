@@ -18,7 +18,8 @@ import {
 import SimpleTable from './simple_table';
 import SimpleDynamicTable from './simple_dynamic_table'
 import ResponsiveTable from './responsive_table'
-import DatatablePage from './app'
+import DatatablePage from './app' //Esta es la que realmente funciona y que es responsive
+import ParallaxScene from './parallax_comp'
 
   class Bg_image_rebass extends React.Component {
       constructor(props) {
@@ -28,38 +29,14 @@ import DatatablePage from './app'
           return(
               <Flex flexWrap='wrap' mx={-2} alignItems='center'>
               <Box 
-                width={1}
-                sx={{
-                    px:4,
-                    py:6,
-                    backgroundImage:
-                    `url(${imageraq})`,
-                    backgroundSize:'cover',
-                    borderRadius: 8,
-                    color: 'white',
-                    bg:'gray'
-                }}>
-                <Heading
-                    textAlign='center'
-                    fontSize={[5, 6]}
-                    color='white'
-                    postion='sticky'>
-                    Raquelandia, el lugar de la Reina!
-                </Heading>
+                width={1}>
+                <ParallaxScene />
               </Box>
               <Box 
                 px={2} 
                 py={2} 
-                width={1/4}
-                >
-                    <SideBarRebass />
-                
-              </Box>
-              <Box 
-                px={2} 
-                py={2} 
-                width={1/4}
-                ><Card width='100%'>
+                width={1/3}
+                ><Card width='100%' style={{padding:'10px'}}>
                     <Box width="100%">
                         <Image src={playa}/>
                     </Box>
@@ -82,7 +59,7 @@ import DatatablePage from './app'
               <Box 
                 px={2} 
                 py={2} 
-                width={1/4}
+                width={1/3}
                 >
                 <Card width='100%'>
                 <Heading
@@ -105,7 +82,7 @@ import DatatablePage from './app'
               <Box 
                 px={2} 
                 py={2} 
-                width={1/4}
+                width={1/3}
                 >
                     <Card width='100%'>
                         <Image src={imagemiki}/>
@@ -145,7 +122,6 @@ import DatatablePage from './app'
                 </Box>
                 </Box>
                 <Box width={1} padding="10px">
-                    <DatatablePage />
                 </Box>
 
                 <Box 
@@ -167,3 +143,23 @@ import DatatablePage from './app'
   }
 
   export default Bg_image_rebass;
+
+/*
+  sx={{
+    px:4,
+    py:6,
+    backgroundImage:
+    `url(${imageraq})`,
+    backgroundSize:'cover',
+    borderRadius: 8,
+    color: 'white',
+    bg:'gray'
+}}>
+<Heading
+    textAlign='center'
+    fontSize={[5, 6]}
+    color='white'
+    postion='sticky'>
+    Raquelandia, el lugar de la Reina!
+</Heading>
+*/

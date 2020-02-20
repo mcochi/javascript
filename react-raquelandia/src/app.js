@@ -28,7 +28,7 @@ class DatatablePage extends React.Component {
   render() {
     //console.log(this.consulta());
     //this.consulta();
-    var data_url = "http://79.153.17.195:3002/users";
+    var data_url = "https://cors-anywhere.herokuapp.com/http://79.153.17.195:3002/users";
     var data_obj = JSON.parse(this.get_data_from_url(data_url));
     var dataapi ={
       columns: [
