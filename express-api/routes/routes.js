@@ -4,6 +4,12 @@ const router = app => {
 			message: 'Te quiero un montón pequeñaja!!!'
 		});
 	});
+	app.get('/ProyEu',(request,response) => {
+		pool.query('SELECT Id, Deadline, title FROM ProyEuropeos WHERE STR_TO_DATE(Deadline,\'%Y/%m/%d\')> CURDATE() ORDER BY STR_TO_DATE(Deadline, \'%Y/%m/%d\');',(error,result) => {
+			if(error) throw error;
+			response.send(result);
+		});
+	});
 	app.get('/users',(request,response) => {
 		pool.query('SELECT * FROM Biotecnologia',(error,result) => {
 			if(error) throw error;
@@ -14,9 +20,11 @@ const router = app => {
 			pool.query('SELECT * FROM Biotecnologia WHERE id = ?', id, (error,result) => {
 					if(error) throw error;
 					response.send(result);
-				});
-		});
+			});
 	});
+	});
+
+	
 }
 /* Creaamos información falsa para hacer las pruebas
 const users = [{
