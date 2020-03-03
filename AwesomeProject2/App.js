@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Text, View, Image, StatusBarIOS } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Container, Header, Thumbnail, Left, Body, Right, Button, Icon, Title, Segment, Content , Card, CardItem} from 'native-base';
+import { Container, Header, Thumbnail, Left, Body, Right, Button, Icon, Title, Segment, Content , Card, CardItem, Item, Input, Form} from 'native-base';
 import { WebView } from 'react-native-webview';
+import ProyEu from './proyEu'
 
 function HomeScreen({ navigation }) {
   //Estaría bien incluir los posibles estudios que realizamos, linkados a nuestra página web
@@ -84,13 +85,42 @@ function ThinkTICScreen() {
   );
 }
 
+
 function EuropaScreen() {
   /*Falta linkarlo con las convocatorias Europeas abiertas, que puedo generarlas ampliando mi api y 
   listando todos los que han sido introducidos durante la última semana*/
+  /* En primer lugar vamos a preguntar a la API para que nos de la información que se requiere*/
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Europa Calls!</Text>
-    </View>
+    <Container>
+    <Header>
+          <Left/>
+          <Body>
+            <Title>DGRII</Title>
+          </Body>
+          <Right />
+      </Header>
+      <Card style={{heigth: 100}}>
+            <CardItem>
+              <Left>
+                <Thumbnail source={require('./horizon.jpg')} />
+                <Body>
+                  <Text>Convocatorias Europeas</Text>
+                  <Text note>H2020</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem>
+              <Body>
+                  <Text>
+                    Aquí encontrarás las calls de proyectos europeos con plazo abierto:
+                  </Text>
+              </Body>
+            </CardItem>
+        </Card>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ProyEu />
+      </View>
+    </Container>
   );
 }
 
