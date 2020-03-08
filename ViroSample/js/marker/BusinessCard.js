@@ -79,7 +79,7 @@ export class BusinessCard extends Component {
                   />
                   <ViroText
                     textClipMode="None"
-                    text="Vladimir Novick"
+                    text="Macos Cochi"
                     scale={[.015, .015, .015]}
                     style={styles.textStyle}
                   />
@@ -170,7 +170,7 @@ var styles = StyleSheet.create({
 
 ViroARTrackingTargets.createTargets({
   "businessCard" : {
-    source : require('./res/business_card.png'),
+    source : require('./res/billete5.jpg'),
     orientation : "Up",
     physicalWidth : 0.05 // real world width in meters
   }

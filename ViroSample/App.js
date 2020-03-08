@@ -30,7 +30,7 @@ var sharedProps = {
 }
 
 // Sets the default scene you want for AR and VR
-var InitialARScene = require('./js/marker/BusinessCard.js');
+var InitialARScene = require('./js/infopanel.js');
 var InitialVRScene = require('./js/interactivePannels/ProductShowcase.js');
 
 var UNSET = "UNSET";
