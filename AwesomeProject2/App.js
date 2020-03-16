@@ -111,9 +111,7 @@ function EuropaScreen() {
             </CardItem>
             <CardItem>
               <Body>
-                  <Text>
-                    Aquí encontrarás las calls de proyectos europeos con plazo abierto:
-                  </Text>
+                <Text>Aquí encontrarás las últimas convocatorias abiertas</Text>
               </Body>
             </CardItem>
         </Card>
@@ -124,6 +122,39 @@ function EuropaScreen() {
   );
 }
 
+function equipamientoScreen () {
+  return(
+    <Container>
+    <Header>
+          <Left/>
+          <Body>
+            <Title>DGRII</Title>
+          </Body>
+          <Right />
+      </Header>
+      <Card style={{heigth: 100}}>
+            <CardItem>
+              <Left>
+                <Thumbnail source={require('./SRI.png')} />
+                <Body>
+                  <Text>Equipamiento</Text>
+                  <Text note>Inventario de Equipamiento</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <Text>Aquí encontrarás el equipamiento disponible para el SRI</Text>
+              </Body>
+            </CardItem>
+        </Card>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        
+      </View>
+    </Container>
+  )
+}
+
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -132,6 +163,7 @@ function MyTabs() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="ThinkTIC" component={ThinkTICScreen} />
       <Tab.Screen name="Convocatorias Europeas" component={EuropaScreen} />
+      <Tab.Screen name="Equipamiento" component={equipamientoScreen} />
     </Tab.Navigator>
   );
 }

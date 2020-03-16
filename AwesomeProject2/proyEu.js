@@ -7,6 +7,7 @@ FlatList,
 Text,
 TouchableOpacity,
 Button, Header, Icon, 
+TextInput
 } from "react-native";
 import MoreInfoButton from './linkingbutton'
 import { Container, Form, Item, Input, Label } from 'native-base';
@@ -23,10 +24,13 @@ export default class ProyEu extends React.Component {
         super(props);
         this.state = {
         loading: true,
-        dataSource:[]
+        dataSource:[],
+        searchword:'',
+        finaldata: []
         };
     }
-    componentDidMount(){
+
+    componentDidMount(){ 
         fetch("http://79.153.17.195:3002/ProyEu")
         .then(response => response.json())
         .then((responseJson)=> {
@@ -49,14 +53,18 @@ export default class ProyEu extends React.Component {
     );
     }
 
-    renderItem=(data)=>
+    renderItem=(data)=> {
+        return(
         <TouchableOpacity style={styles.list}>
         <Text style={styles.lightText}>{data.item.Id}</Text>
         <Text style={styles.lightText}>{data.item.Deadline}</Text>
         <Text style={styles.lightText}>{data.item.title}</Text>
         <MoreInfoButton url={data.item.Id.toString()}/></TouchableOpacity>
-       
-
+        );
+    }
+    mysearchhandler = (text) => {
+        this.setState({searchword: text})
+    }
     render(){
         if(this.state.loading){
         return( 
@@ -66,14 +74,20 @@ export default class ProyEu extends React.Component {
         )}
         return(
         <Container>
+        <Container>
         <View style={styles.container}>
+        <TextInput 
+            style={{ height: 40,borderColor: 'gray', borderWidth: 1}}
+            onChangeText={text => this.mysearchhandler(text)}
+            />
             <FlatList
-                data= {this.state.dataSource}
+                data= {this.state.dataSource.filter(data => data.title.toString().indexOf(this.state.searchword) >= 0)}
                 ItemSeparatorComponent = {this.FlatListItemSeparator}
                 renderItem= {item=> this.renderItem(item)}
                 keyExtractor= {item=>item.Id.toString()}
             />
             </View>
+            </Container>
             </Container>
         )}
         }
