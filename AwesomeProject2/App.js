@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Container, Header, Thumbnail, Left, Body, Right, Button, Icon, Title, Segment, Content , Card, CardItem, Item, Input, Form} from 'native-base';
 import { WebView } from 'react-native-webview';
 import ProyEu from './proyEu'
+import Equip from './equip'
 
 function HomeScreen({ navigation }) {
   //Estaría bien incluir los posibles estudios que realizamos, linkados a nuestra página web
@@ -138,7 +139,7 @@ function equipamientoScreen () {
                 <Thumbnail source={require('./SRI.png')} />
                 <Body>
                   <Text>Equipamiento</Text>
-                  <Text note>Inventario de Equipamiento</Text>
+                  <Text note>Inventario</Text>
                 </Body>
               </Left>
             </CardItem>
@@ -149,7 +150,7 @@ function equipamientoScreen () {
             </CardItem>
         </Card>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        
+        <Equip />
       </View>
     </Container>
   )
